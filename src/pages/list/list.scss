@@ -1,0 +1,21 @@
+list-page {
+  #input-card{
+    display: flex;
+  }
+  #add-button{
+    float: right;
+    font-size: 1.5em;
+    margin-left: 1em;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+  }
+  #input {
+    float: left;
+    font-size: 1.5em;
+    //border-style: solid;
+    //border-width: 1px;
+    //border-radius: 3px;
+    box-shadow: 0px 0px 3px #000;
+    margin-bottom: 0.5em;
+  }
+}

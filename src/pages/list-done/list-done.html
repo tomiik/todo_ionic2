@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My First List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let item of items">
+    <ion-card *ngIf="item.done === true && item.trash ===false">
+      <ion-card-header>
+        <ion-checkbox color="dark" checked="{{item.done}}" (click)="checkTapped($event, item)"></ion-checkbox>
+        <span (click)="itemTapped($event, item)">{{item.title}}</span>
+        <ion-icon class="trash-button" name="trash" (click)="trashTapped($event, item)"></ion-icon>
+      </ion-card-header>
+    </ion-card>
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title}}</b>
+    </div>
+  </div>
+</ion-content>

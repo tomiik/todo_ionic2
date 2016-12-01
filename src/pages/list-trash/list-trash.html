@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My First List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let item of items">
+    <ion-card *ngIf="item.trash === true">
+      <ion-card-header>
+        <ion-icon name="undo" (click)="undoTapped($event, item)"></ion-icon>
+        <ion-icon *ngIf="item.done === false" name="square"></ion-icon>
+        <ion-icon *ngIf="item.done === true" name="checkbox"></ion-icon>
+        <span (click)="itemTapped($event, item)">{{item.title}}</span>
+        <ion-icon class="close-button" name="close-circle" (click)="deleteTapped($event, item)"></ion-icon>
+      </ion-card-header>
+    </ion-card>
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title}}</b>
+    </div>
+  </div>
+</ion-content>
